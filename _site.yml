@@ -1,0 +1,21 @@
+name: "Personal Site"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About"
+      href: about.html
+    - text: "Plotly"
+      href: plotly.html
+    - text: "Dashboard"
+      href: dashboard.html
+    - text: "Fonts"
+      href: https://fontawesome.com/icons
+    - icon: fa-envelope fa-lg
+      href: mailto:<barryprchiu@gmail.com>
+    - icon: fa-github fa-lg
+      href: http://github.com/bachu1503/
+output:
+  html_document:
+    theme: flatly
+    
