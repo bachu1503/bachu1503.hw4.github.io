@@ -1,57 +1,63 @@
 ---
 title: ""
 output: 
-  pagedown::html_resume:
-        css: 
-          - override.css
-          - resume
-        # set it to true for a self-contained HTML page but it'll take longer to render
-        self_contained: true
-    # uncomment this line to produce HTML and PDF in RStudio:
-#knit: pagedown::chrome_print
+  html_document
 ---
+<br> <br>
 
-Education {data-icon=graduation-cap}
+**Education**
 ------------------------------------
-### Columbia University Mailman School of Public Health
+#### **Columbia University Mailman School of Public Health**
 Master of Public Health in Epidemiology; Certificate in Comparative Effectiveness & Outcomes 
 
-Skills: R, SAS, STATA, Excel, PowerPoint
+Skills: R, SAS, STATA, Excel, PowerPoint  
 
-### New York University
-Bachelor of Arts in Global Public Health and History; Minor in Business\
-break
+#### **New York University**
+Bachelor of Arts in Global Public Health and History; Minor in Business
 
-Experience
 ------------------------------------
-### Data Scientist, intern
 
-SupStat Inc.
+**Experience**
+------------------------------------
+#### **Clarivate Commercial Strategy Consulting**
+##### *Summer Associate*
+ - Partnered with a top five biopharma company to explore strategic opportunities for initiating asset development in rare disease indications by exploring treatment paradigm, identifying unmet needs, and evaluating potential for orphan drug designation.
+ - Conducted strategic positioning assessment of a novel RNAi agent, examining reimbursement landscape, unmet needs, and various pricing strategies to maximize asset’s commercial potential and overcome Market Access barriers.
+ - Performed Primary and Secondary market research, engaging physician and payer experts, in support of premarket biopharmaceuticals focusing on Product Planning and Market Access strategy across the US, UK, and EU4.
+ - Developed client-ready deliverables and assisted team with strategic recommendations for novel agents across neurology and rheumatology with potential to alter treatment paradigm and address patient unmet needs.
 
-Beijing, China
+<br>
 
-2014
+#### **Columbia University Irving Medical Center**
+##### *Data Analyst*
+ - Collaborated with Pediatric Cardiology research team to align on primary data collection progress, identify hurdles, and address challenges faced during study implementation on a weekly basis.
+ - Cleaned, transformed, and linked multiple datasets totaling 300K+ observations using R, ensuring consistent data quality for future statistical analyses.
+ - Communicated with study subjects across the US to obtain missing data and performed data entry of survey questionnaires.
+ 
+<br>
 
-::: concise
-- Taught R language to beginners. 
-- Wrote Shiny app demos.
-- Converted statistical tutorials from SPSS to R language.
-:::
+#### **Brown University Center for Gerontology and Healthcare Research**
+##### *Research Assistant*
+ - Led research on the impact of geographic variations on biologic drug use among Medicare rheumatoid arthritis patients. 
+ - Managed, analyzed, and visualized Medicare claims dataset of 2 million claims for publication using R, SAS, Excel, and ArcGIS.
+ - Created literature reviews through PubMed, EMBASE, and Cochrane, synthesizing 34 articles for publication.
 
-### Bioinformatician
+<br>
 
-My Health Gene Technology Co., Ltd.
+#### **National Yang Ming Chiao Tung University Research Center for Epidemic Prevention **
+##### *Research Assistant*
+ - Edited manuscripts investigating health economics and outcomes of COVID-19 epidemic prevention measures in preparation for journal publication. 
+ -	Conducted focus groups, ensuring adherence to research protocols, to assess costs and impact of non-pharmaceutical interventions for central government in a country with highly successful COVID-19 prevention efforts.
 
-Beijing, China
+<br>
 
-2015 - 2016
-
-::: concise
-- Analyzed whole-exome sequencing data. 
-- Wrote analysis pipelines of ChIP-seq, single cell DNA-seq and single cell RNA-seq.
-- Studied tumor metastasis and wrote research reports. 
-- Also did case studies to identify the genetic defect causing rare disease.
-:::
+#### **Northwell Health Cancer Institute**
+##### *Summer Analyst, Business Strategy*
+ - Projected patient volume and downstream revenue in support of system-level cancer genetics strategic initiative for executives. 
+ - Conducted competitive analysis of major competitors using physician referral and patient demographic data; communicated key findings to senior-level executives.
+ - Produced market analysis of oncology-specific investment, technology, and business development trends within the New York area through qualitative research of key competitors.
+ 
+ 
 ------------------------------------
 
 A footer in the sidebar.
