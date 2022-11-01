@@ -2,7 +2,7 @@ name: "Personal Site"
 output_dir: "."
 navbar:
   title: "Home"
-  center:
+  right:
     - text: "Resume"
       href: resume.html
     - text: "Dashboard"
