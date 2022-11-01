@@ -3,7 +3,14 @@ title: ""
 output: 
   html_document
 ---
-<br> <br>
+
+```{css, echo = FALSE}
+h1, h2, h3 {
+  text-align: center;
+}
+```
+
+<br>
 
 **Education**
 ------------------------------------
@@ -60,4 +67,7 @@ Bachelor of Arts in Global Public Health and History; Minor in Business
  
 ------------------------------------
 
-A footer in the sidebar.
+**Skills**
+------------------------------------
+- **Additional Languages** - English (Fluent) & Mandarin Chinese (Fluent)
+- **Certifications** - Adult First Aid and CPR/AED Certified
