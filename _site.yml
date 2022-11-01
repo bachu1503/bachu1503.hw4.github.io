@@ -17,5 +17,5 @@ navbar:
       href: http://github.com/bachu1503/
 output:
   html_document:
-    theme: flatly
+    css: bootstrap.css
     
