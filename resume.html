@@ -11,7 +11,7 @@
 
 
 
-<title>Resume</title>
+<title>resume.knit</title>
 
 <script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -29,9 +29,6 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -225,69 +222,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -295,16 +229,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -357,20 +281,63 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Resume</h1>
 
 </div>
 
 
-<div id="this-page-has-information-about-me" class="section level1">
-<h1>This page has information about me</h1>
-<p>MPH</p>
+<div id="education" class="section level2" data-icon="graduation-cap">
+<h2>Education</h2>
+<div id="columbia-university-mailman-school-of-public-health"
+class="section level3">
+<h3>Columbia University Mailman School of Public Health</h3>
+<p>Master of Public Health in Epidemiology; Certificate in Comparative
+Effectiveness &amp; Outcomes</p>
+<p>Skills: R, SAS, STATA, Excel, PowerPoint</p>
+</div>
+<div id="new-york-university" class="section level3">
+<h3>New York University</h3>
+<p>Bachelor of Arts in Global Public Health and History; Minor in
+Business<br />
+break</p>
+</div>
+</div>
+<div id="experience" class="section level2">
+<h2>Experience</h2>
+<div id="data-scientist-intern" class="section level3">
+<h3>Data Scientist, intern</h3>
+<p>SupStat Inc.</p>
+<p>Beijing, China</p>
+<p>2014</p>
+<div class="concise">
+<ul>
+<li>Taught R language to beginners.</li>
+<li>Wrote Shiny app demos.</li>
+<li>Converted statistical tutorials from SPSS to R language.</li>
+</ul>
+</div>
+</div>
+<div id="bioinformatician" class="section level3">
+<h3>Bioinformatician</h3>
+<p>My Health Gene Technology Co., Ltd.</p>
+<p>Beijing, China</p>
+<p>2015 - 2016</p>
+<div class="concise">
+<ul>
+<li>Analyzed whole-exome sequencing data.</li>
+<li>Wrote analysis pipelines of ChIP-seq, single cell DNA-seq and single
+cell RNA-seq.</li>
+<li>Studied tumor metastasis and wrote research reports.</li>
+<li>Also did case studies to identify the genetic defect causing rare
+disease.</li>
+</ul>
+</div>
+<hr />
+<p>A footer in the sidebar.</p>
+</div>
 </div>
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -403,35 +370,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

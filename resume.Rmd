@@ -1,11 +1,57 @@
 ---
-title: "Resume"
+title: ""
 output: 
-  html_document:
-    toc: true
-    toc_float: true
+  pagedown::html_resume:
+        css: 
+          - override.css
+          - resume
+        # set it to true for a self-contained HTML page but it'll take longer to render
+        self_contained: true
+    # uncomment this line to produce HTML and PDF in RStudio:
+#knit: pagedown::chrome_print
 ---
 
-# This page has information about me
+Education {data-icon=graduation-cap}
+------------------------------------
+### Columbia University Mailman School of Public Health
+Master of Public Health in Epidemiology; Certificate in Comparative Effectiveness & Outcomes 
 
-MPH
+Skills: R, SAS, STATA, Excel, PowerPoint
+
+### New York University
+Bachelor of Arts in Global Public Health and History; Minor in Business\
+break
+
+Experience
+------------------------------------
+### Data Scientist, intern
+
+SupStat Inc.
+
+Beijing, China
+
+2014
+
+::: concise
+- Taught R language to beginners. 
+- Wrote Shiny app demos.
+- Converted statistical tutorials from SPSS to R language.
+:::
+
+### Bioinformatician
+
+My Health Gene Technology Co., Ltd.
+
+Beijing, China
+
+2015 - 2016
+
+::: concise
+- Analyzed whole-exome sequencing data. 
+- Wrote analysis pipelines of ChIP-seq, single cell DNA-seq and single cell RNA-seq.
+- Studied tumor metastasis and wrote research reports. 
+- Also did case studies to identify the genetic defect causing rare disease.
+:::
+------------------------------------
+
+A footer in the sidebar.
