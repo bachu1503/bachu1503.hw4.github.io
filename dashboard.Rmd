@@ -61,14 +61,12 @@ instacart %>%
   count(product_name, aisle) %>% 
   mutate(rank = min_rank(rank(desc(n)))) %>%
   filter(rank < 50) %>%
-  mutate(product_name = fct_reorder(product_name, n)) %>% 
+  mutate(product_name = fct_rev(fct_reorder(product_name, n))) %>% 
   plot_ly(x = ~product_name, y = ~n, color = ~aisle, type = "bar", colors = "Set2") %>%
   layout(title = "Top 50 Ordered Alcoholic Beverages",
          xaxis = list(title = "Name of Product"),
          yaxis = list(title = "Number Ordered"),
-         legend = list(x = 0.1, y = 0.9))
-
-instacart %>% count(aisle)
+         legend = list(x = 0.5, y = 0.9))
 ```
 
 Column {data-width=500}
@@ -77,11 +75,13 @@ Column {data-width=500}
 ### Chart B
 
 ```{r}
-
+instacart %>%
+  
 ```
 
 ### Chart C
 
 ```{r}
-
+instacart %>%
+  
 ```
