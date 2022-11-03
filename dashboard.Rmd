@@ -5,6 +5,8 @@ output:
     orientation: columns
     vertical_layout: fill
     source: embed
+    theme: cerulean
+
 ---
 
 ```{r, include=FALSE}
