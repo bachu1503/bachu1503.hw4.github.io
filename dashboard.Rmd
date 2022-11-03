@@ -18,36 +18,7 @@ data("instacart")
 
 
 ```{r}
-# nyc_airbnb <- 
-#   nyc_airbnb %>%
-#   mutate(rating = review_scores_location / 2) %>%
-#   select(neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) %>%
-#   filter(
-#     neighbourhood_group == "Manhattan",
-#     price %in% 100:500,
-#     room_type == "Entire home/apt"
-#   ) %>%
-#   drop_na(rating)
-# 
-# instacart2 <-
-#   instacart %>%
-#   filter(department == "alcohol") %>%
-#   group_by(product_name) %>%
-#   summarize(n = n())
-# 
-# instacart %>% group_by(department) %>%
-#   summarize(n = n())
-# 
-# instacart %>% count(aisle) %>% arrange(desc(n))
-# 
-# instacart2 <- 
-#   instacart %>%
-#   filter(department == "alcohol") %>%
-#   #group_by(aisle) %>%
-#   count(product_name) %>%
-#   mutate(rank = min_rank(rank(desc(n)))) %>%
-#   filter(rank <= 50) %>%
-#   arrange(desc(n))
+
 ```
 
 Column {data-width=500}
@@ -59,7 +30,13 @@ Column {data-width=500}
 instacart %>% 
   filter(department == "alcohol") %>%
   count(product_name, aisle) %>% 
-  mutate(rank = min_rank(rank(desc(n)))) %>%
+  mutate(rank = min_rank(rank(desc(n))),
+         aisle = recode(aisle,
+                        "beers coolers" = "Beer",
+                        "red wines" = "Red Wine",
+                        "specialty wines champagnes" = "Specialty Wines/Champagnes",
+                        "spirits" = "Spirit",
+                        "white wines" = "White Wine")) %>%
   filter(rank < 50) %>%
   mutate(product_name = fct_rev(fct_reorder(product_name, n))) %>% 
   plot_ly(x = ~product_name, y = ~n, color = ~aisle, type = "bar", colors = "Set2") %>%
@@ -76,12 +53,43 @@ Column {data-width=500}
 
 ```{r}
 instacart %>%
-  
+  filter(department == "alcohol") %>%
+  count(product_name, aisle) %>% 
+  mutate(rank = min_rank(rank(desc(n))),
+         aisle = recode(aisle,
+                        "beers coolers" = "Beer",
+                        "red wines" = "Red Wine",
+                        "specialty wines champagnes" = "Specialty Wines/Champagnes",
+                        "spirits" = "Spirit",
+                        "white wines" = "White Wine")) %>%
+  filter(rank <= 100) %>%
+  plot_ly(y = ~n, color = ~aisle, type = "box", colors = "Set2") %>%
+  layout(title = "Frequency of Orders by Type of Alcohol",
+         xaxis = list(title = "Type of Alcohol"),
+         yaxis = list(title = "Number Ordered"))
 ```
 
 ### Chart C
 
 ```{r}
 instacart %>%
-  
+  filter(department == "alcohol") %>%
+  count(aisle, order_hour_of_day) %>% 
+  mutate(rank = min_rank(rank(desc(n))),
+         aisle = recode(aisle,
+                        "beers coolers" = "Beer",
+                        "red wines" = "Red Wine",
+                        "specialty wines champagnes" = "Specialty Wines/Champagnes",
+                        "spirits" = "Spirit",
+                        "white wines" = "White Wine"),
+         text_label = str_c("Time of Day: ", order_hour_of_day, "\nNumber Ordered: ", n)
+         ) %>%
+  filter(rank <= 1000) %>%
+  plot_ly(
+    x = ~order_hour_of_day, y = ~n, type = "scatter", mode = "line",
+    color = ~aisle, text = ~text_label, colors = "Set2"
+  ) %>%
+  layout(title = "Frequency of Orders by Hour of Day",
+         xaxis = list(title = "Hour of Day"),
+         yaxis = list(title = "Number Ordered"))
 ```
