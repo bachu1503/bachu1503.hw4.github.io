@@ -74,8 +74,7 @@ instacart %>%
 instacart %>%
   filter(department == "alcohol") %>%
   count(aisle, order_hour_of_day) %>% 
-  mutate(rank = min_rank(rank(desc(n))),
-         aisle = recode(aisle,
+  mutate(aisle = recode(aisle,
                         "beers coolers" = "Beer",
                         "red wines" = "Red Wine",
                         "specialty wines champagnes" = "Specialty Wines/Champagnes",
@@ -83,7 +82,6 @@ instacart %>%
                         "white wines" = "White Wine"),
          text_label = str_c("Time of Day: ", order_hour_of_day, "\nNumber Ordered: ", n)
          ) %>%
-  filter(rank <= 1000) %>%
   plot_ly(
     x = ~order_hour_of_day, y = ~n, type = "scatter", mode = "line",
     color = ~aisle, text = ~text_label, colors = "Set2"
