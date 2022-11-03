@@ -38,7 +38,9 @@ instacart %>%
   layout(title = "Top 50 Ordered Alcoholic Beverages",
          xaxis = list(title = "Name of Product"),
          yaxis = list(title = "Number Ordered"),
-         legend = list(x = 0.5, y = 0.9))
+         legend = list(x = 0.5, y = 0.9),
+         hoverlabel = list(bordercolor = "transparent",
+                           font = list(color = "white")))
 ```
 
 Column {data-width=500}
@@ -61,7 +63,9 @@ instacart %>%
   plot_ly(y = ~n, color = ~aisle, type = "box", colors = "Set2") %>%
   layout(title = "Frequency of Orders by Type of Alcohol",
          xaxis = list(title = "Type of Alcohol"),
-         yaxis = list(title = "Number Ordered"))
+         yaxis = list(title = "Number Ordered"),
+         hoverlabel = list(bordercolor = "transparent",
+                           font = list(color = "white")))
 ```
 
 ### Chart C
@@ -86,5 +90,7 @@ instacart %>%
   ) %>%
   layout(title = "Frequency of Orders by Hour of Day",
          xaxis = list(title = "Hour of Day"),
-         yaxis = list(title = "Number Ordered"))
+         yaxis = list(title = "Number Ordered"),
+         hoverlabel = list(bordercolor = "transparent",
+                           font = list(color = "white")))
 ```
